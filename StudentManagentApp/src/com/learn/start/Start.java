@@ -20,6 +20,30 @@ while(true) {
 int press=Integer.parseInt(br.readLine());
 if(press==1) {
 	//add student
+	System.out.println("enter student's fullname :") ;
+	String name=br.readLine();
+
+    System.out.println("enter student's phonenumber :") ;
+	String phonenumber=br.readLine();
+	
+System.out.println("enter student's city:") ;
+	
+	String city=br.readLine();
+	
+	
+	Student st=new Student(name,phonenumber, city);
+	System.out.println(st);
+	
+	boolean status=StudentDao.addaStudentTODB(st);
+	
+	if(status) {
+		System.out.println("student added successfully");
+	}
+	else {
+		System.out.println("student not added please check it");
+	}
+	
+	
 }
 else if(press==2) {
 	//delete student
