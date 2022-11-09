@@ -47,9 +47,23 @@ System.out.println("enter student's city:") ;
 }
 else if(press==2) {
 	//delete student
+	System.out.println("enter student id you want to delete");
+	Integer stdid=Integer.parseInt(br.readLine());
+	boolean status=StudentDao.deleteStudentById(stdid);
+	if(status) {
+		System.out.println("student deleted successfully");
+	}
+	else {
+		System.out.println("student not deleted please check it");
+	}
+	
 }
 else if(press==3) {
 	//display a student
+	
+	StudentDao.displayAllStudents();
+
+	
 }
 else if(press==4) {
 	//exit the app
